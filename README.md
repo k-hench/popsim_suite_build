@@ -14,7 +14,7 @@ To make the container publicly available, it is pushed to [dockerhub](https://hu
 
 ```sh
 skopeo login -u khench docker.io
-podman push localhost/popsim_suite docker.io/khench/popsim_suite:v0.1
+podman push localhost/popsim_suite docker.io/khench/popsim_suite:v0.2
 ```
 
 ## Accessing the container
@@ -22,5 +22,5 @@ podman push localhost/popsim_suite docker.io/khench/popsim_suite:v0.1
 The bundled software can be accessed directly from [dockerhub](https://hub.docker.com/r/khench/popsim_suite) with `podman` (or `docker`, or `apptainer`/`singularity`):
 
 ```sh
-podman run docker.io/khench/popsim_suite:v0.1 fastsimcoal2 --version
+podman run docker.io/khench/popsim_suite:v0.2 fsc27093 --version
 ```

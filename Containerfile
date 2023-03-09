@@ -19,6 +19,10 @@ RUN conda config --add channels defaults && \
 COPY env.yml /
 RUN mamba env create -f /env.yml && conda clean -a
 
+ENV PATH ${PATH}:/miniconda/envs/popsim_suite/bin
+
+RUN pip install numpy pandas scipy
+
 # install est-sfs manually
 RUN apt install -y git
 RUN mkdir -p /manual_install/bin && \
@@ -29,4 +33,4 @@ RUN mkdir -p /manual_install/bin && \
     cd ../bin && \
     ln ../easySFS/*.py ./
 
-ENV PATH ${PATH}:/miniconda/envs/popsim_suite/bin:/manual_install/bin
+ENV PATH ${PATH}:/manual_install/bin
